@@ -26,9 +26,20 @@ public class FlyCommand extends BaseCommand {
 
             // Command sender is a player
             ServerPlayer target = (ServerPlayer) source.getSource().getEntity();
-            target.getAbilities().setMayFly(true);
-            target.getAbilities().setFlying(true);
+
+            boolean currentState = target.getAbilities().mayFly();
+
+            target.getAbilities().setMayFly(!currentState);
+            target.getAbilities().setFlying(!currentState);
             target.sendUpdatedAbilities();
+
+            TextComponent base = (TextComponent) new TextComponent("Fundamentals> ").withStyle(s -> s.withBold(true).withColor(ChatFormatting.YELLOW));
+
+            if (currentState) base.append(new TextComponent("You can no longer fly!").withStyle(s -> s.withColor(ChatFormatting.RED).withBold(true)));
+            else base.append(new TextComponent("You can now fly!").withStyle(s -> s.withColor(ChatFormatting.GREEN).withBold(true)));
+
+            source.getSource().sendSuccess(base, false);
+
             return 1;
         });
     }
