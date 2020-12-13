@@ -1,5 +1,7 @@
 package systems.conduit.fundamentals;
 
+import systems.conduit.fundamentals.commands.FlyCommand;
+import systems.conduit.fundamentals.commands.FundamentalsCommand;
 import systems.conduit.main.core.plugin.Plugin;
 import systems.conduit.main.core.plugin.annotation.PluginMeta;
 
@@ -12,7 +14,7 @@ public class FundamentalsPlugin extends Plugin {
 
     @Override
     protected void onEnable() {
-
+        registerCommands(new FundamentalsCommand(), new FlyCommand());
     }
 
     @Override
