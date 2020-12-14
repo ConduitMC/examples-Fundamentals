@@ -13,14 +13,14 @@ import java.util.Optional;
  * @author Innectic
  * @since 12/13/2020
  */
-@PluginMeta(name = "Fundamentals", version = "0.0.1", description = "Fundamental utilities", author = "ConduitMC")
+@PluginMeta(name = "Fundamentals", version = "0.0.1", description = "Fundamental utilities", author = "ConduitMC", reloadable = true)
 public class FundamentalsPlugin extends Plugin {
 
     @Getter private final TPManager tpManager = new TPManager();
 
     @Override
     protected void onEnable() {
-        registerCommands(new FundamentalsCommand(), new FlyCommand(), new HealCommand(), new TPACommand(), new TPAccept());
+        registerCommands(new FundamentalsCommand(), new FlyCommand(), new HealCommand(), new TPACommand(), new TPAccept(), new TPDeny());
     }
 
     @Override
