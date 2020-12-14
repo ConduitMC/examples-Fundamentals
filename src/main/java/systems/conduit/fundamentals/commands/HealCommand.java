@@ -21,7 +21,7 @@ import java.util.Optional;
 public class HealCommand extends BaseCommand {
 
     private int heal(CommandContext<CommandSourceStack> source, Optional<String> player) {
-        ServerPlayer target = null;
+        ServerPlayer target;
 
         if (player.isPresent()) {
             // If there was a provided name, try to lookup the player.
