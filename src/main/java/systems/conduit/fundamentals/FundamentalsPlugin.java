@@ -20,7 +20,7 @@ public class FundamentalsPlugin extends Plugin {
 
     @Override
     protected void onEnable() {
-        registerCommands(new FundamentalsCommand(), new FlyCommand(), new HealCommand(), new TPACommand(), new TPAccept(), new TPDeny());
+        registerCommands(new FundamentalsCommand(), new FlyCommand(), new HealCommand(), new TPACommand(), new TPAccept(), new TPDeny(), new MoreCommand());
     }
 
     @Override
