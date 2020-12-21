@@ -26,7 +26,7 @@ public class MoreCommand extends BaseCommand {
                 ctx.getSource().sendFailure(CommandUtils.BASE_COMPONENT.copy().append(new TextComponent("You aren't a player!").withStyle(s -> s.withColor(ChatFormatting.RED).withBold(true))));
                 return 0;
             }
-            Optional<FundamentalsPlugin> plugin = FundamentalsPlugin.getPlugin();
+            Optional<FundamentalsPlugin> plugin = FundamentalsPlugin.getPlugin(FundamentalsPlugin.class);
             if (!plugin.isPresent()) return 0;
 
             ServerPlayer player = (ServerPlayer) ctx.getSource().getEntity();

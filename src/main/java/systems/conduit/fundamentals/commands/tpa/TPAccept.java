@@ -1,4 +1,4 @@
-package systems.conduit.fundamentals.commands;
+package systems.conduit.fundamentals.commands.tpa;
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import net.minecraft.ChatFormatting;
@@ -28,7 +28,7 @@ public class TPAccept extends BaseCommand {
                 source.getSource().sendFailure(CommandUtils.BASE_COMPONENT.copy().append(new TextComponent("You aren't a player!").withStyle(s -> s.withColor(ChatFormatting.RED).withBold(true))));
                 return 0;
             }
-            Optional<FundamentalsPlugin> plugin = FundamentalsPlugin.getPlugin();
+            Optional<FundamentalsPlugin> plugin = FundamentalsPlugin.getPlugin(FundamentalsPlugin.class);
             if (!plugin.isPresent()) return 0;
 
             ServerPlayer player = (ServerPlayer) source.getSource().getEntity();

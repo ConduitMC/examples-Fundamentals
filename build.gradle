@@ -4,7 +4,7 @@ buildscript {
         mavenLocal()
         jcenter()
         maven {
-            url "https://repo.conduit.systems/repositories/releases/"
+            url "https://repo.conduit.systems/repository/releases/"
         }
     }
 
@@ -16,7 +16,7 @@ buildscript {
 apply plugin: "Stream"
 
 conduit {
-    version = "0.0.5"
-    minecraft = "20w48a"
+    version = "0.0.6"
+    minecraft = "20w49a"
     java = "1.8"
 }

@@ -1,4 +1,4 @@
-package systems.conduit.fundamentals.commands;
+package systems.conduit.fundamentals.commands.tpa;
 
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
@@ -36,7 +36,7 @@ public class TPACommand extends BaseCommand {
                 return 0;
             }
 
-            Optional<FundamentalsPlugin> plugin = FundamentalsPlugin.getPlugin();
+            Optional<FundamentalsPlugin> plugin = FundamentalsPlugin.getPlugin(FundamentalsPlugin.class);
             if (!plugin.isPresent()) return 0;
 
             plugin.get().getTpManager().addTPA(sender, targetPlayer.get());
